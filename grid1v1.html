@@ -2,10 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <lin>
-    <title>Title</title>
+    <link rel="stylesheet" href="CSS/grid1v1.css">
+    <title>Tic-Tac-Toe</title>
 </head>
-<body>
 
+<body>
+<div class="game-container">
+    <h1>Tic-Tac-Toe</h1>
+    <div class="grid">
+        <button class="cell" data-index="0"></button>
+        <button class="cell" data-index="1"></button>
+        <button class="cell" data-index="2"></button>
+        <button class="cell" data-index="3"></button>
+        <button class="cell" data-index="4"></button>
+        <button class="cell" data-index="5"></button>
+        <button class="cell" data-index="6"></button>
+        <button class="cell" data-index="7"></button>
+        <button class="cell" data-index="8"></button>
+    </div>
+    <div id="status">X's turn</div>
+    <button id="reset">Reset Game</button>
+</div>
+
+    <script src="JavaScript/1v1.js"></script>
 </body>
 </html>
