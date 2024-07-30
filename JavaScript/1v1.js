@@ -56,7 +56,7 @@ function checkWin()
     var isDraw = Array.from(cells).every(cell => cell.textContent !== "");
     if (isDraw) 
     {
-        updateStatus("its tie, draw");
+        updateStatus("its tie, draw whatever");
         gameOver = true;
     }
 }
