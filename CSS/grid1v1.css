@@ -23,8 +23,9 @@ h1 {
     grid-template-rows: repeat(3, 80px);
     gap: 5px;
     background-color: #ff3333;
-    padding: 5px;  /* this creates the frame */
-    border: 2px solid #ff3333;  /* this reinforces the frame */
+    padding: 5px;
+    
+    border: 2px solid #ff3333;
 }
 
 .cell {
