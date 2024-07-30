@@ -2,6 +2,12 @@ var currentPlayer = "X";
 var gameOver = false;
 var cells = document.querySelectorAll(".cell");
 var statusElement = document.getElementById("status");
+// ניצחונות
+var winCombos = [
+    [0, 1, 2], [3, 4, 5], [6, 7, 8], // שורות
+    [0, 3, 6], [1, 4, 7], [2, 5, 8], // עמודות
+    [0, 4, 8], [2, 4, 6] // אלכסונה
+];
 function updateStatus(message) {
     if (statusElement) {
         statusElement.textContent = message;
@@ -24,11 +30,6 @@ function switchPlayer() {
     updateStatus(currentPlayer + "'s turn");
 }
 function checkWin() {
-    var winCombos = [
-        [0, 1, 2], [3, 4, 5], [6, 7, 8], // שורות
-        [0, 3, 6], [1, 4, 7], [2, 5, 8], // עמודות
-        [0, 4, 8], [2, 4, 6] // אלכסונה
-    ];
     for (var i = 0; i < winCombos.length; i++) {
         if (cells[winCombos[i][0]].textContent === currentPlayer &&
             cells[winCombos[i][1]].textContent === currentPlayer &&
@@ -39,8 +40,8 @@ function checkWin() {
         }
     }
     var isDraw = true;
-    for (var i_1 = 0; i_1 < cells.length; i_1++) {
-        if (cells[i_1].textContent === "") {
+    for (var i = 0; i < cells.length; i++) {
+        if (cells[i].textContent === "") {
             isDraw = false;
             break;
         }

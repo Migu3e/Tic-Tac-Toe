@@ -10,7 +10,7 @@ const winCombos = [
     [0, 4, 8], [2, 4, 6]              // אלכסונה
 ];
 
-function updateStatus(message : string)
+function updateStatus(message : string):void
 {
     if (statusElement)
     {
@@ -22,7 +22,7 @@ function updateStatus(message : string)
     }
 }
 
-function makeMove(index: number)
+function makeMove(index: number):void
 {
     if (!gameOver && cells[index].textContent === "")
     {
@@ -35,16 +35,16 @@ function makeMove(index: number)
     }
 }
 
-function switchPlayer()
+function switchPlayer():void
 {
     currentPlayer = currentPlayer === "X" ? "O" : "X";
     updateStatus(currentPlayer + "'s turn");
 }
 
-function checkWin()
+function checkWin():void
 {
 
-    for (var i = 0; i < winCombos.length; i++)
+    for (let i = 0; i < winCombos.length; i++)
     {
         if (cells[winCombos[i][0]].textContent === currentPlayer &&
             cells[winCombos[i][1]].textContent === currentPlayer &&
@@ -68,7 +68,7 @@ function checkWin()
     }
 }
 
-function resetGame()
+function resetGame() : void
 {
     cells.forEach(cell => cell.textContent = "");
     currentPlayer = "X";
